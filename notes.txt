@@ -1,3 +1,25 @@
 being curious  is must 
 
-    
+javascript runtime
+
+chrome v8 engine
+
+open js foundation is the community that takes care of node js 
+
+even driven architecture (important) and capable of asynchronous i/O(Non blocking i/O)
+to run js we need js engine ,without it we cannot run it
+
+ryan dahul  developed node js in 2009
+    -> he built it on top of spider monkey that is the javascript engine in firefox (but in just 2 days he changes to google v8 engine)
+    -> joyent company also at that time building the same concept ad ryan dahl ,so they hae called him and made him employee then started working there
+    -> first he named the node js as web js because we can create a web server and later after realizing the potential he renamed to node js
+    -> the problem why he created the node js is Apache ,http server is the server which is a blocking server ,so he need to create a server which is non blocking i/O so he created 
+        node js 
+    -> in 2010 npm came so that all small small package like helper package can be created this iswhere the node js started to become popular
+    -> in 2011 windows and joynet combined and started to support on windows ,initially the support is on mac and linux
+    -> in 2012 isacc who is the creater of npm started to team lead node js but he couldnt keep up with the google v8 new engine so it become slow 
+    -> in 2014 two libray have been created i/o .js and node js i/o is the fork of node js 
+    -> in 2015 a commmon node js company merged both and named it as node js 
+    -> in 2019 both js foundation and node js foundation merged to open js foundation and started to maintain the node js 
+
+
