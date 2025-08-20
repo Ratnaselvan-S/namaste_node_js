@@ -31,4 +31,4 @@ binary code (011100)
 
 
 why we need javascript engine ?
-    the c++ engine is the one responsible to convert the js code into machine understandable instructions  ,it will convert into 
+    the c++ engine is the one responsible to convert the js code into machine understandable instructions 
