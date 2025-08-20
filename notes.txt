@@ -1,34 +1,16 @@
-first on initial when we search google.com we know it will convert to ip and then request willl be made to server to fetch the web address 
-    -> now we can refine the server itself from node js 
-    ->  javascript  engine is written in c++
-    -> v8 engine can be embedded into  any c++ apllication 
+npm -node package manager
 
-what is ecmascript ?
--> tc39 is the one who is maintaining ecma script ,this is 39 people maintaining it 
-Ecmascript is the standard which we follow (var a=10) here after var we write variable name and then equals to aasign it 
-    ->they define rules and that should be follwed on all the engine of browser
-            -> v8 engine -google
-            -> spider monkey -fire fox 
-            -> chakra microsoft
-            -> JavaScriptCore  - safari 
+nvm-node version manager
 
-node js has v8 engine but the v8 does not have power to make api call to get image or connect to data it is just an engine to execute the javascript in ecmascript standard 
+npx - node package executer
 
-why it is called javascript  run time ?
-    so node js has on top on v8 it has more library that can do lot of stuff such as make api call etc this is known as javascript run time 
-    -> we have modules and api etc
+node repl(Read evaluate ,print,loop )
 
+    -> node in terminal then we can run any javascript code on the terminal (behind the scene how it is running means ,javascript engine is there that is v8)
 
+Global object in browser is window object ,like wise in a global object in node js is just "global" this gives access to setinterveal,clearout etc like these funtions
+this is the super power of node js not v8 engine
 
+like in browser if we type "this" then it will reference the object of the window but in backend that is node js "this" refers empty object
 
-high level language 
-------------------
-machine code           |
-------------------     |  low level code 
-assembly code          |
-------------------
-binary code (011100)
-
-
-why we need javascript engine ?
-    the c++ engine is the one responsible to convert the js code into machine understandable instructions 
+GlbalThis === Global
