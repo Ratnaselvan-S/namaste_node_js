@@ -7,7 +7,7 @@ module.exports={x:x,calculateSum:calculateSum}
 
 common Js modules                               |               Es modules(Es6 module)
  -> module.exports                              |   -> in package.json if we explicit type:"module" on the package then normal import export we do in react can be achieived in node js
- ->require()                                    |   
+ ->require()                                    |   ->import and export 
  ->Older way                                    |    -> Newer way
  ->Synchronous way                              |   -> Asynchronous way
  -> Non strict mode (we can define              |
