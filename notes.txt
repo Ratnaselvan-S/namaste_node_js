@@ -1,16 +1,18 @@
-npm -node package manager
+in node js every file is separate module so to connect them we will require them to our main file 
 
-nvm-node version manager
+modules are protected by default it will protect variable,function and methods ,they are not exposed 
+    -> the require module will run but inside if we defined variable,function etc are not accessable unless we explicilty exported
 
-npx - node package executer
+module.exports={x:x,calculateSum:calculateSum}
 
-node repl(Read evaluate ,print,loop )
+common Js modules                               |               Es modules(Es6 module)
+ -> module.exports                              |   -> in package.json if we explicit type:"module" on the package then normal import export we do in react can be achieived in node js
+ ->require()                                    |   
+ ->Older way                                    |    -> Newer way
+ ->Synchronous way                              |   -> Asynchronous way
+ -> Non strict mode (we can define              |
+ variable without  varaiable name )             |   -> strict mode (Here we need to write a variable name)
+                                               
 
-    -> node in terminal then we can run any javascript code on the terminal (behind the scene how it is running means ,javascript engine is there that is v8)
 
-Global object in browser is window object ,like wise in a global object in node js is just "global" this gives access to setinterveal,clearout etc like these funtions
-this is the super power of node js not v8 engine
-
-like in browser if we type "this" then it will reference the object of the window but in backend that is node js "this" refers empty object
-
-GlbalThis === Global
+node:util this is a imp module 
