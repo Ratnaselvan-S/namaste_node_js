@@ -1,18 +1,3 @@
-in node js every file is separate module so to connect them we will require them to our main file 
+node js modules and require ,how it works 
 
-modules are protected by default it will protect variable,function and methods ,they are not exposed 
-    -> the require module will run but inside if we defined variable,function etc are not accessable unless we explicilty exported
-
-module.exports={x:x,calculateSum:calculateSum}
-
-common Js modules                               |               Es modules(Es6 module)
- -> module.exports                              |   -> in package.json if we explicit type:"module" on the package then normal import export we do in react can be achieived in node js
- ->require()                                    |   ->import and export 
- ->Older way                                    |    -> Newer way
- ->Synchronous way                              |   -> Asynchronous way
- -> Non strict mode (we can define              |
- variable without  varaiable name )             |   -> strict mode (Here we need to write a variable name)
-                                               
-
-
-node:util this is a imp module 
+when we create a function and inside if we create a variable or another function ,it is not accessable outside it right ,the scope is not accessable outide the function
