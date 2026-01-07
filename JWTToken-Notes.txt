@@ -1,0 +1,6 @@
+JWt Token
+----------
+    -> first on login we need to assign the token 
+    -> the token caan have user data and its secret code and expires in all those things
+    -> jwt.sign({ user: user._id, email: user.email }, process.env.JWT_SECRET,{ expiresIn: "1d" });
+    -> 

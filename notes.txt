@@ -1,3 +1,0 @@
-node js modules and require ,how it works 
-
-when we create a function and inside if we create a variable or another function ,it is not accessable outside it right ,the scope is not accessable outide the function
