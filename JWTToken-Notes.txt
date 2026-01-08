@@ -2,5 +2,19 @@ JWt Token
 ----------
     -> first on login we need to assign the token 
     -> the token caan have user data and its secret code and expires in all those things
-    -> jwt.sign({ user: user._id, email: user.email }, process.env.JWT_SECRET,{ expiresIn: "1d" });
-    -> 
+    -> const token = jwt.sign({ user: user._id, email: user.email }, process.env.JWT_SECRET,{ expiresIn: "1d" });
+    -> next we set the token to cookie
+    -> res.cookie("token", token, {httpOnly: true,secure: process.env.NODE_ENV === "production" || false,sameSite: "lax",maxAge: 24 * 60 * 60 * 1000, // 1 day });
+    ->httponly means the cookie can be read only by http request not by javascript or react 
+    ->secure , here cokkie is sent only over https if it is true ,if it is false the cookie can be sent over http 
+    -> SameSite 
+        Cookie NOT sent when:
+            User clicks link from another site
+            Request comes from another domain
+            CSRF attempt
+
+        ✅ Cookie sent when:
+            Same domain
+            Same origin
+            Direct interaction
+   
