@@ -1,3 +1,10 @@
 node js modules and require ,how it works 
 
 when we create a function and inside if we create a variable or another function ,it is not accessable outside it right ,the scope is not accessable outide the function
+
+module exports 
+---------------
+    -> when two or more modules have same variable name it may conflict if we export it ,but if there is no export and all accessable in all files then that conflict,  
+    and we wont know which variable has which value , it will cause confusion and we cant predict it  also .
+
+    -> module.exports when we console log it is just a empty object '{}'
