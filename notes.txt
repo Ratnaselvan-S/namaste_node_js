@@ -1,10 +1,55 @@
-node js modules and require ,how it works 
+Module Deep Dive
+-------------------
+    -> so here is a question how the modules are private ??
+        ans : we know scope and the module or a new filw when we create and add some function the entire file or module is wrapped inside a function ,so by doing this we cant get the value 
+        right 
 
-when we create a function and inside if we create a variable or another function ,it is not accessable outside it right ,the scope is not accessable outide the function
+            ex:
+            function  x(){
+                const a=10
+                function y(){
+                    console.log(a)
+                }
+            }
 
-module exports 
----------------
-    -> when two or more modules have same variable name it may conflict if we export it ,but if there is no export and all accessable in all files then that conflict,  
-    and we wont know which variable has which value , it will cause confusion and we cant predict it  also .
 
-    -> module.exports when we console log it is just a empty object '{}'
+            console.log(a)
+
+        -> here 'a' is print undefined because of scope , we cant reference a future variable to console log right , like that all file or module is wrapped inside function
+
+        -> so here the function wrapped is not a normal function it is 'IIFE'- Immedietly invoked Function Expression
+            -> iife syntax:
+                (function (module,require){}) ()
+
+        -> homework (IIFE) research it.
+
+        -> Question: How are variable and function private in different modules ?
+                
+                ans: IIfe and require statement
+
+        -> Question: How do you get access to module.export ?
+
+                ans:  the iife functions have  parameters module and require which are given by node js
+
+       ->  When execution reaches require() in main.js, Node.js loads the target file (for example math.js), wraps it inside an IIFE (module wrapper),
+        and executes it immediately.
+        During execution, only the variables or functions assigned to module.exports are exposed.
+        Exported primitive values are returned by value, while objects and functions are returned by reference from heap memory.
+        After the module finishes execution and is removed from the call stack, require() returns the value referenced by module.exports.
+
+
+        Require 5 Steps:
+            1) Resolving the module
+                ->It means it needs to find whether the file required is json, or local file (which we wrote) or node modules file like (third part libraries)
+
+            2) Loading the module
+                -> it means it loads the file according to the type (local module,json or node moudules etc)
+
+            3) Wraps inside Iffe
+                -> compile it 
+                
+            4) Code evaluation
+                -> here only module export happen and it returns something.
+
+            5) caching
+                -> here it caching so that no need to again and again bring and execute
