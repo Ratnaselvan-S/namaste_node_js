@@ -1,55 +1,16 @@
-Module Deep Dive
--------------------
-    -> so here is a question how the modules are private ??
-        ans : we know scope and the module or a new filw when we create and add some function the entire file or module is wrapped inside a function ,so by doing this we cant get the value 
-        right 
+Javascript
+-----------
+    -> Synchronous single threaded langage
+    -> single thread means , assume v8 engine is connected 10 a single thread and all the javascript runs on that single thread , 
+        (if you take any other they have multiple thread and share same memory so a piece of code runs in one thread and another piece runs in another thread that is 
+        multi thread)
 
-            ex:
-            function  x(){
-                const a=10
-                function y(){
-                    console.log(a)
-                }
-            }
+LibUv
+------
+    -> libuv is a C library that provides Node.js with an event loop, a thread pool, and abstractions to handle asynchronous I/O using the operating system efficiently.
 
+    -> libuv is the one that manages event loop of macro task queue (check the libuv.png image)
 
-            console.log(a)
-
-        -> here 'a' is print undefined because of scope , we cant reference a future variable to console log right , like that all file or module is wrapped inside function
-
-        -> so here the function wrapped is not a normal function it is 'IIFE'- Immedietly invoked Function Expression
-            -> iife syntax:
-                (function (module,require){}) ()
-
-        -> homework (IIFE) research it.
-
-        -> Question: How are variable and function private in different modules ?
-                
-                ans: IIfe and require statement
-
-        -> Question: How do you get access to module.export ?
-
-                ans:  the iife functions have  parameters module and require which are given by node js
-
-       ->  When execution reaches require() in main.js, Node.js loads the target file (for example math.js), wraps it inside an IIFE (module wrapper),
-        and executes it immediately.
-        During execution, only the variables or functions assigned to module.exports are exposed.
-        Exported primitive values are returned by value, while objects and functions are returned by reference from heap memory.
-        After the module finishes execution and is removed from the call stack, require() returns the value referenced by module.exports.
-
-
-        Require 5 Steps:
-            1) Resolving the module
-                ->It means it needs to find whether the file required is json, or local file (which we wrote) or node modules file like (third part libraries)
-
-            2) Loading the module
-                -> it means it loads the file according to the type (local module,json or node moudules etc)
-
-            3) Wraps inside Iffe
-                -> compile it 
-                
-            4) Code evaluation
-                -> here only module export happen and it returns something.
-
-            5) caching
-                -> here it caching so that no need to again and again bring and execute
+*Important*
+-----------
+    -> In frontend or backend , microtask is handles by v8 engine and macro task is handled by browser and in backend it is handled by libuv
