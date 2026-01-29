@@ -1,16 +1,7 @@
-Javascript
------------
-    -> Synchronous single threaded langage
-    -> single thread means , assume v8 engine is connected 10 a single thread and all the javascript runs on that single thread , 
-        (if you take any other they have multiple thread and share same memory so a piece of code runs in one thread and another piece runs in another thread that is 
-        multi thread)
+ UTF8 (Unicode Transformation Format)
+ -------------------------------------
+    -> humans can understand the letters but computer can only understand o's and 1's so we need something to encode to understand it.
+    -> Ascii is used but it is very limited and can understand only 127 character and cannot understand emojis, other symbols etc, so we need a format for globally thus
+        utf8 is introduced
 
-LibUv
-------
-    -> libuv is a C library that provides Node.js with an event loop, a thread pool, and abstractions to handle asynchronous I/O using the operating system efficiently.
-
-    -> libuv is the one that manages event loop of macro task queue (check the libuv.png image)
-
-*Important*
------------
-    -> In frontend or backend , microtask is handles by v8 engine and macro task is handled by browser and in backend it is handled by libuv
+-> check about crypto library in node js
