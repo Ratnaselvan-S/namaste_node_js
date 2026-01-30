@@ -1,7 +1,7 @@
 Javascript
 -----------
     -> Synchronous single threaded langage
-    -> single thread means , assume v8 engine is connected 10 a single thread and all the javascript runs on that single thread , 
+    -> single thread means , assume v8 engine is connected to a single thread and all the javascript runs on that single thread , 
         (if you take any other they have multiple thread and share same memory so a piece of code runs in one thread and another piece runs in another thread that is 
         multi thread)
 
