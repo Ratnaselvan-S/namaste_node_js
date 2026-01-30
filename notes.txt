@@ -4,7 +4,7 @@ when we create a function and inside if we create a variable or another function
 
 module exports 
 ---------------
-    -> when two or more modules have same variable name it may conflict if we export it ,but if there is no export and all accessable in all files then that conflict,  
-    and we wont know which variable has which value , it will cause confusion and we cant predict it  also .
+    -> when two or more modules have same variable name it may not conflict if we export it because the scope is different,but if there is no export and all accessable
+     in all files then that conflict, and we wont know which variable has which value , it will cause confusion and we cant predict it  also .
 
     -> module.exports when we console log it is just a empty object '{}'
