@@ -1,7 +1,41 @@
- UTF8 (Unicode Transformation Format)
- -------------------------------------
-    -> humans can understand the letters but computer can only understand o's and 1's so we need something to encode to understand it.
-    -> Ascii is used but it is very limited and can understand only 127 character and cannot understand emojis, other symbols etc, so we need a format for globally thus
-        utf8 is introduced
+V8 Engine
+---------
+    -> when we give code to v8 engine what happens inside it ?
+        Parsing          
+        --------
+            1) Lexical analysis (each and every line is converted into  tokens)
+            2) Syntax analysis (the tokens are converted to AST(Abstract syntax tree))
+                -> Ast
+                        -> here var x = 1; this code is converted into ast by first VariableDeclarator and then identifier is "x" and literal is "1"
+                        -> so why we call syntax error , when we pass a piece of code and if it is not able to generate then that is known as syntax error
 
--> check about crypto library in node js
+        Javascript (JIT) compilation
+        -----------------------------
+            -> read about crank shaft , before turbo fan this used to be the compiler
+            compiled 
+            ----------
+                -> the  whole code is converted from high level to machine code before execution
+                -> in Javascript it optimizes and deoptimzes code (ie convert hot code to machine code to run faster and aso it deconvert it and remove also if it works differ )
+                -> Inline chaching,copy ellipson
+            Interpreter (Ignition)
+            -----------
+                -> IT executes line by line 
+                -> when interpreting the code , it identifies the piece of code that called or used again and again , so it gives the code to compiler (compiler (Turbo fan)
+                optimizes the code )
+
+     
+
+        Byte code
+        ---------
+        execution
+        ------------
+
+        GArbage collection
+        -------------------
+            ->Mark and sweep Algorithm
+
+
+
+EXplore v8 engine official docs and blog (Home Work)
+
+
