@@ -1,3 +1,51 @@
 Libuv
 ------
     -> Libuv is the reason nodejsis asynchronous and non blocking i/o
+    -> libuv has the event loop  and  callback queue  in backend and in frontend browser do these.
+
+Event loop
+------------
+    -> it has certain phases
+    -> see the image for the phases
+    -> the first phase is timer , the event loop when start it checks any timer callback function is available 
+    -> the second phase is poll , we are making api call , i/o,file read all these are executes in second phase
+    -> in thirdphase , check phase setimmediate function callback will be executed here
+    -> in fourth phase, close phase here we close any ongoinge thing like socket etc
+    -> each phase has separate callback queues
+
+    -> it starts at the timer phase and one full round is completed and all the timer, check all executed ,now after one round the event loop waits in poll phase
+
+
+    *imp*
+    -----
+        -> Before execution of *each* four phases, we will check two important checks that is process.nextTick() and promise callbacks
+
+
+Check the event_loop.js file  and refer event_loop_execution.js file , to refer how libuv handles asynchronous call back function
+
+
+Second example Ans 
+-----------------
+    -> check the image second_example.png
+
+        Last line of code 
+        next ticket
+        promise
+        time expired 
+        setimmediate
+        file reading cb
+        2nd next tick
+        2nd immediate
+        2nd timer
+
+third example Ans
+------------------
+    -> *imp* when there is a process nexttick callback and inside there is "n" number of process nextick then it will resolve all at the same time.
+    -> last line of code
+        nexttick
+        inner next tick 
+        promise
+        timer expired 
+        setimmediate
+        file reading
+    
