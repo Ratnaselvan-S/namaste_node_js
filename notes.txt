@@ -23,7 +23,7 @@ User connection
 
     H/W
     ----
-        Scalable I/O Event  Notification mechanism ,FDS- Socket descriptor ,Event Emitters ,Streams & buffers ,pipes
+        Scalable I/O Event  Notification mechanism ,FDS- Socket descriptor ,Event Emitters ,Streams(coveyor belt) & buffers(batch) ,pipes(Traffic police)
        
 
 
