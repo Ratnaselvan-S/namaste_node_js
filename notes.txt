@@ -1,0 +1,30 @@
+Thread pool
+-----------
+    -> Default Thread pool size is 4 in node js but we can change it by "process.env.UV_THREADPOOL_SIZE=2"
+
+        
+        
+    Hardware -> kernal -> process
+
+
+User connection
+----------------
+    ->When a user connects to a web server, the OS creates a TCP socket and assigns a separate socket descriptor (a “hotel room number”) for that connection.
+
+    OS
+    ---
+        -> Epoll(Linux)
+        -> Kqueue (MacOS)
+
+    ->For network-related tasks, Node.js hands the work to the OS.The OS handles the network I/O asynchronously, and when data is ready, 
+        epoll notifies libuv, which then schedules the corresponding callback to be executed by the event loop.
+
+    -> libuv uses a thread pool to run blocking or CPU-intensive tasks in background threads, then schedules their callbacks on the event loop once finished.
+
+    H/W
+    ----
+        Scalable I/O Event  Notification mechanism ,FDS- Socket descriptor ,Event Emitters ,Streams & buffers ,pipes
+       
+
+
+*Read the Learnings.png image
