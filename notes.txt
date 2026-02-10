@@ -49,3 +49,16 @@ third example Ans
         setimmediate
         file reading
     
+Tick is the full cycle of event loop phase
+
+
+Homework
+---------
+    -> we know event loop , when it run once and in second cycle it waits at poll phase, so we need to find where that particular code is presented
+    -> /libuv/src/unix/core.c
+
+
+Thread
+--------
+    -> A thread pool is a set of CPU-executed worker threads inside the same Node.js process where heavy or blocking operations are offloaded. 
+    Because of this, even though JavaScript runs on a single main thread, Node.js achieves non-blocking I/O using libuv and its thread pool (and OS async APIs).
