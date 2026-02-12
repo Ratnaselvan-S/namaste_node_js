@@ -8,4 +8,29 @@ server
 
     -> when they say http server , means an application which handles  users http request (like "/path" means what resources to give like that)
     -> server is nothing but an application which handles users request of resources on the internet
-    -> *Protocol* - it is a set of rules defined for connection on computers
+    -> *Protocol* - it is a set of rules defined for communication between computers 
+
+    Http,Ftp,Smtp -> consider these as different type of languages used to communicate to get what they needed
+        -> like http is used to communicate and get html document ,ftp is used to get files from the server likewise
+    
+    Http
+    ----
+        ->So when an client request a http request to a server , it first checks the request process the files and send the data back in chunks or streams of packets ,
+            the data do not come whole , they just sent back in chunks(Buffer)
+
+        -> www.namastedev.com this is like verbal address we understand this but  computer wont , so for computer to understand address we map ip like a set of numbers 
+            consider ip as a geolocation
+
+    DNS
+    ----
+        -> when we request www.namastedev.com it is first request to dns server , that will give the ip and now with the ip it will ask the corresponding server
+
+        IP = server that runs NamasteDev program
+        Port = the specific application on that server
+
+         Refer the image server.png , we will get to know frontend ,backend,db,images etc all can be in different server for better availability and scalability
+
+    Socket vs webSocket
+    --------------------
+        -> when user request resources to the server a socket is made and after the responce the socket close , this is normal behaviour of socket but when webSocket
+        the connection is made it will stays for the particular period of time , iin this timer they can have two ways of communication
