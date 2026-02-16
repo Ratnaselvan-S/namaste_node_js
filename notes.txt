@@ -1,0 +1,22 @@
+Mongodb
+------------
+    -> go to mongo db website
+    -> create a free MO cluster 
+    -> create a user
+    -> get the connection  string
+    -> install mongodb compass
+
+
+    /* hw*/
+        -> install mongodb
+        -> crud operation
+    
+    Find
+    ----
+        -> when we put await collection.find({firstname:"deepika"}) and not put toArray() method the find will return a cursor and 
+        we can for a promise chaining like  structure with the cursor
+        
+
+        -> MongoDB’s find() returns a cursor instead of actual data to ensure memory efficiency and scalability. A cursor acts as a pointer to the result set on the database server 
+        and fetches documents in small batches, rather than loading everything into application memory at once. This allows MongoDB to handle large datasets safely,
+         support streaming, and apply operations like sort() and limit() before execution. The actual data is retrieved only when methods like toArray() or iteration are used.
