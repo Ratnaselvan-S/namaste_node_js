@@ -1,13 +1,25 @@
-Software development life cycle
----------------------------------
-    ->Requirement  (Project Manager / Product Manager)
-            |__Design (design the ui looks based on requirements (Tech team like senior developmer ,enginner))
-                 |___Development (junior developer/ intern)(sometimes write unit test)
-                            |____Testing (Tester will develope it)
-                                    |____Deployment (Devops)
-                                            |__________Maintanence (again it starts from first requirements)
+LLD
+----
+    -> DB Design
 
-    -> refer the image with "monolith_micro.png"
+            - User -firstname,lastname,email id,password,age,gender
+            - another collection of connection request - from user id , to user id , status 
 
-    -> namaste dev admin is written in react js and the video and student web are written in nextjs , probably due to seo
-    
+    -> Api Design   
+
+            - post /signup
+            - post /login
+            - get /profile
+            - post /profile
+            - patch /profile
+
+
+put vs patch HW
+
+        -> PUT replaces the entire resource with the new data you send. If some fields are missing, they may be overwritten or removed.
+
+        -> PATCH updates only the specific fields you provide, leaving the rest unchanged.
+
+        -> Use PUT when you want full replacement; use PATCH for partial modification.
+
+        -> PUT is generally idempotent (same request → same result), while PATCH may or may not be.
