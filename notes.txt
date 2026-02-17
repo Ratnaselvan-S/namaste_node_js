@@ -1,25 +1,13 @@
-LLD
-----
-    -> DB Design
-
-            - User -firstname,lastname,email id,password,age,gender
-            - another collection of connection request - from user id , to user id , status 
-
-    -> Api Design   
-
-            - post /signup
-            - post /login
-            - get /profile
-            - post /profile
-            - patch /profile
+Node modules /bin folder
+------------------------
+    -> The node_modules/.bin folder contains executable CLI files of installed packages.When a package provides a command-line tool, npm creates a symlink here.
+    It allows you to run tools locally without installing them globally.
+    npm run automatically uses commands from this folder.
 
 
-put vs patch HW
+Version of package
+-------------------
+    -> 4 .19 . 2  -> major ,minor(new features and it is backward compactible) and patch(bug fix) update
 
-        -> PUT replaces the entire resource with the new data you send. If some fields are missing, they may be overwritten or removed.
-
-        -> PATCH updates only the specific fields you provide, leaving the rest unchanged.
-
-        -> Use PUT when you want full replacement; use PATCH for partial modification.
-
-        -> PUT is generally idempotent (same request → same result), while PATCH may or may not be.
+    What is “Backward Compatible”?
+        Backward compatible means the new version still supports the old code without breaking it.
