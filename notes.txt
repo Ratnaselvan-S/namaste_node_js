@@ -1,13 +1,44 @@
-Node modules /bin folder
-------------------------
-    -> The node_modules/.bin folder contains executable CLI files of installed packages.When a package provides a command-line tool, npm creates a symlink here.
-    It allows you to run tools locally without installing them globally.
-    npm run automatically uses commands from this folder.
+Order of the route matters
+--------------------------
+    example -> app.use("/", (req, res) => {
+                res.send("server noted");
+                });
+                app.use("/test", (req, res) => {
+                res.send("server tested");
+                });
+            ->when we type "localhost:3000/" or "localhost:3000/test" it will print "server noted" for both as the order of the path we arite matters
+
+    example -> app.use("/test", (req, res) => {
+                res.send("server tested");
+                });
+
+                app.use("/test/2", (req, res) => {
+                res.send("server 2 tested");
+                });
+
+            ->likewise the above this also prints "server tested" for both route 
+
+    *imp app.use handles all data starting with the path (refer above example) but app.get or post match exactly that path *
+    *Never put app.use before any get or post because the path even if we mentioned get /user it will not not executed if we put app.use("/user")*
 
 
-Version of package
--------------------
-    -> 4 .19 . 2  -> major ,minor(new features and it is backward compactible) and patch(bug fix) update
+app.get('/ab?c') -> in this route when we request "abc it works" and  "ac also works because of question mark"
 
-    What is “Backward Compatible”?
-        Backward compatible means the new version still supports the old code without breaking it.
+app.get("/ab+c) => in this route when we request "abbbbbbbbbbbbbc it works" and "abccc  it wont work"
+
+app.get("/ab*cd) => in this route anything between ab and cd it works like "acaksaycd it works" make sure start and end is correct
+
+app.get("/a(bc)?d) ->  in this route when we request "ad it works" and  "acd not works"
+
+we can also put regex in the route
+---------------------------------------
+
+app.get(/a/) this is regex here anything starts with a works
+
+app.get(/.*fly$/) all route which ends with fly will be handled here
+
+
+
+req.query for after ? mark in req
+
+req.params dynamic path route app.get("/users/:id")
