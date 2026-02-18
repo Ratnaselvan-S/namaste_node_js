@@ -1,44 +1,43 @@
-Order of the route matters
---------------------------
-    example -> app.use("/", (req, res) => {
-                res.send("server noted");
-                });
-                app.use("/test", (req, res) => {
-                res.send("server tested");
-                });
-            ->when we type "localhost:3000/" or "localhost:3000/test" it will print "server noted" for both as the order of the path we arite matters
-
-    example -> app.use("/test", (req, res) => {
-                res.send("server tested");
-                });
-
-                app.use("/test/2", (req, res) => {
-                res.send("server 2 tested");
-                });
-
-            ->likewise the above this also prints "server tested" for both route 
-
-    *imp app.use handles all data starting with the path (refer above example) but app.get or post match exactly that path *
-    *Never put app.use before any get or post because the path even if we mentioned get /user it will not not executed if we put app.use("/user")*
+ Router handler
+ -------------------
+    ->  when a user request a '/user' and in backend we did not send responce like res.send then the request keeps on loading untila responce or timeout of the request came
 
 
-app.get('/ab?c') -> in this route when we request "abc it works" and  "ac also works because of question mark"
+example
+---------
+app.use(
+  "/user",
+  (req, res, next) => {
+    console.log("respnce");
 
-app.get("/ab+c) => in this route when we request "abbbbbbbbbbbbbc it works" and "abccc  it wont work"
+    // res.send("first responce");
+    next();
+  },
+  (req, res) => {
+    console.log("second");
+    res.send("second responce");
+  },
+);
 
-app.get("/ab*cd) => in this route anything between ab and cd it works like "acaksaycd it works" make sure start and end is correct
+-> here when we req users console log responce will be printed and next when it is not there it will just leave it be , and if next is there the nextrouter function execute and 
+    second is printed and second responce is also printed and second responce is sended 
 
-app.get("/a(bc)?d) ->  in this route when we request "ad it works" and  "acd not works"
+    *remember for a route only one res need to be send multiple responce gives error , so the concept here is when the users req a socket is created and when the responce 
+    is sent then the socket is closed , so we cant send multiple res *
 
-we can also put regex in the route
----------------------------------------
+-> i can wrap the multiple router handler in array also
 
-app.get(/a/) this is regex here anything starts with a works
+-> we can also define two or more router handler with same path and write next inside
 
-app.get(/.*fly$/) all route which ends with fly will be handled here
+-> why do we need multiple router handler , it is needed for middleware
+     supporse app.use to /users if we write it on top then all the req to /user or /user/id so on all thing goues through app.use so in there we validate and then we 
+        go to next route by this way we validate the auth of the route (see the image app.use.png)
 
+-> app.use vs app.all Homework
 
+-> app.use("/",(err,req,res,next)=>{
+    if(err){
+        res.start.send("something went wrong")
+    }
 
-req.query for after ? mark in req
-
-req.params dynamic path route app.get("/users/:id")
+})
