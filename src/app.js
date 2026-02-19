@@ -2,40 +2,31 @@ const express = require("express");
 
 const app = express();
 
-const { authmiddleware } = require("./Middlewares/auth");
+const connectDb = require("./config/database");
+const User = require("./models/user");
 
-// app.use("/", (req, res) => {
-//   res.send("server noted");
-// });
-// app.use("/test", (req, res) => {
-//   res.send("server tested");
-// });
+app.post("/signup", async (req, res) => {
+  const user = new User({
+    firstName: "Asksay saini",
+    lastName: "Something",
+    emailId: "soething@email",
+    password: "something",
+  });
 
-// app.use("/test/2", (req, res) => {
-//   res.send("server 2 tested");
-// });
-
-app.use(
-  "/user",
-  (req, res, next) => {
-    console.log("respnce");
-
-    // res.send("first responce");
-    next();
-  },
-  (req, res) => {
-    console.log("second");
-    res.send("second responce");
-  },
-);
-
-app.get("/admin", authmiddleware, (req, res) => {
-  res.send("send user data");
+  try {
+    await user.save();
+    res.send("user data stored succesfull");
+  } catch (err) {
+    res.status("404").send("something went wrong: " + err);
+  }
 });
-
-app.get("/users", (req, res) => {
-  res.send({ firstname: "something" });
-});
-app.listen(7777, () => {
-  console.log("Server started");
-});
+connectDb()
+  .then(() => {
+    console.log("Data base connected succesfully");
+    app.listen(7777, () => {
+      console.log("Server started");
+    });
+  })
+  .catch((error) => {
+    console.error("Something went wrong" + error);
+  });
