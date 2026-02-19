@@ -6,7 +6,7 @@ Order of the route matters
                 app.use("/test", (req, res) => {
                 res.send("server tested");
                 });
-            ->when we type "localhost:3000/" or "localhost:3000/test" it will print "server noted" for both as the order of the path we arite matters
+            ->when we type "localhost:3000/" or "localhost:3000/test" it will print "server noted" for both as the order of the path we write matters
 
     example -> app.use("/test", (req, res) => {
                 res.send("server tested");
@@ -33,7 +33,7 @@ app.get("/a(bc)?d) ->  in this route when we request "ad it works" and  "acd not
 we can also put regex in the route
 ---------------------------------------
 
-app.get(/a/) this is regex here anything starts with a works
+app.get(/a/) this is regex here anything starts with "a" works
 
 app.get(/.*fly$/) all route which ends with fly will be handled here
 
