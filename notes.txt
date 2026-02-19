@@ -1,0 +1,14 @@
+Difference between javascript object and json // homework
+
+JavaScript Object	          |  JSON
+Exists inside JavaScript	  |  Data format (text format)
+Can store functions	          |  Cannot store functions
+Keys can be without quotes	  |  Keys must be in double quotes
+Used in runtime memory	      |  Used for data transfer
+Can use single quotes	      |   Only double quotes allowed
+
+in app.use if we do not pass a path then it will check all the routes by default
+
+-> when the user send the data the json is converted into object and added into req.body by express.json middleware
+
+-> try to read the mongoose document
