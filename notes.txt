@@ -7,7 +7,7 @@ V8 Engine
             2) Syntax analysis (the tokens are converted to AST(Abstract syntax tree))
                 -> Ast
                         -> here var x = 1; this code is converted into ast by first VariableDeclarator and then identifier is "x" and literal is "1"
-                        -> so why we call syntax error , when we pass a piece of code and if it is not able to generate then that is known as syntax error
+                        -> so why we call syntax error , when we pass a piece of code and if it is not able to generate ast then that is known as syntax error
 
         Javascript (JIT) compilation
         -----------------------------
