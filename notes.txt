@@ -22,11 +22,9 @@ why it is called javascript  run time ?
 
 
 high level language 
-------------------
-machine code           |
-------------------     |  low level code 
-assembly code          |
-------------------
+------------------     |  
+assembly code          |  low level code 
+------------------     |
 binary code (011100)
 
 
